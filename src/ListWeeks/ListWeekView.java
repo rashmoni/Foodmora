@@ -1,20 +1,18 @@
-package dieticianMenu;
+package ListWeeks;
 
 import utils.PrintHandler;
 
 import java.util.List;
 
-public class DieticianMenuView {
-
-
-    public DieticianMenuView(List<String> menuOptions) {
+public class ListWeekView {
+    public ListWeekView(List<String> menuOptions) {
         PrintHandler.clearScreen();
         PrintHandler.appTitle();
-        System.out.println("Dietician Menu:");
-        PrintHandler.optionList(menuOptions);
-        PrintHandler.switchToUser();
-        printRequest();
+        System.out.println("List of all weeks:");
+        PrintHandler.pintList(menuOptions);
+        optionSelectMsg();
     }
+
     public void printInvalidOption() {
         System.out.println("⚠️ Invalid option");
     }
@@ -30,4 +28,9 @@ public class DieticianMenuView {
     public void printSongPlaying() {
         System.out.println("▶️ Playing song");
     }
+
+    public void optionSelectMsg() {
+        System.out.print("Enter 1 to view current week and 0 to go back");
+    }
+
 }

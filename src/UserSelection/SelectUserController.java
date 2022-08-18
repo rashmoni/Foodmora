@@ -1,14 +1,14 @@
-package userMenu;
+package UserSelection;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class UserMenuController {
-    private final UserMenuView view;
-    private final UserMenuModel model;
+public class SelectUserController {
+    private final SelectUserView view;
+    private final SelectUserModel model;
     private final Scanner scanner;
 
-    public UserMenuController(UserMenuModel model, UserMenuView view) {
+    public SelectUserController(SelectUserModel model, SelectUserView view) {
         this.model = model;
         this.view = view;
         this.scanner = new Scanner(System.in);

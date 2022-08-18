@@ -1,4 +1,4 @@
-package mainMenu;
+package UserSelection;
 
 import java.util.List;
 import utils.*;

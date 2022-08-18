@@ -48,13 +48,43 @@ public class PrintHandler {
         }
     }
 
-    public static void printRecipe(List<String> recipe) {
-        for (int index = 0; index < recipe.size(); index++) {
-            int number = index + 1;
-            String label = recipe.get(index);
+    public static void printRecipe(Recipe recipe) {
 
-            System.out.println("[" + number + "] " + label);
+        List<String> ingredients = recipe.getIngredients();
+        List<String> steps = recipe.getSteps();
+        String Name = recipe.getName();
+
+        System.out.println(recipe.getName());
+        System.out.println("Ingredients: ");
+        for (int index = 0; index < ingredients.size(); index++) {
+            if(index>=2) {
+                System.out.println("\t"+ingredients.get(index));
+            }
         }
+
+        System.out.println("\n"+"Steps: ");
+        for (int index = 0; index < steps.size(); index++) {
+            if (index >=2) {
+                System.out.println("\t"+steps.get(index));
+            }
+        }
+    }
+
+    public static void printWeek(Week week) {
+
+        List<String> weekValues = week.getWeek();
+        String weekNumber = weekValues.get(0);
+
+
+        System.out.println("Items for Week " +weekNumber+ " : ");
+        System.out.println("1. Monday    " + "\t"+weekValues.get(1));
+        System.out.println("2. Tuesday   " + "\t"+weekValues.get(2));
+        System.out.println("3. Wednesday " + "\t"+weekValues.get(3));
+        System.out.println("4. Thursday  " + "\t"+weekValues.get(4));
+        System.out.println("5. Friday    " + "\t"+weekValues.get(5));
+        System.out.println("6. Saturday  " + "\t"+weekValues.get(6));
+        System.out.println("7. Sunday    " + "\t"+weekValues.get(7));
+
     }
 
     private static void clearScreenUnix() {

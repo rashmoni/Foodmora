@@ -1,30 +1,27 @@
-package userMenu;
+package UserMenu;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
-import ListRecipes.ListRecipes;
+import DieticianMenu.DieticianMenu;
 import utils.*;
+import ListRecipes.*;
+import ViewRecipe.*;
+import ListWeeks.*;
 
 public class UserMenuModel {
     private final List<String> userMenuOptions = List.of("List my weeks", "List recipes", "View recepie", "Generate a new week");
-    private static List<Recipe> recipes;
-
-    public UserMenuModel(List<Recipe> recipes) throws FileNotFoundException {
-        this.recipes= recipes;
-    }
-
     public List<String> getMenuOptions() {
         return userMenuOptions;
     }
 
-
-
-    public void handleOption(int selectedOption) throws IndexOutOfBoundsException, FileNotFoundException {
+    public void handleOption(int selectedOption) throws IndexOutOfBoundsException, IOException {
         switch (selectedOption) {
+            case 0 -> new DieticianMenu();
             case 1 ->  new ListWeeks();
-            case 2 -> new ListRecipes(recipes);
-            case 3 -> new ViewRecipe(recipes);
+            case 2 -> new ListRecipes("User");
+            case 3 -> new ViewRecipe("User");
             case 4 -> new GenerateWeek();
             default -> throw new IndexOutOfBoundsException();
         }

@@ -1,4 +1,4 @@
-package dieticianMenu;
+package DieticianMenu;
 
 public class DieticianMenu {
     public DieticianMenu(){

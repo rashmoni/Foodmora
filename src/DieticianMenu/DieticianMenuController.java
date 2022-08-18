@@ -1,14 +1,14 @@
-package mainMenu;
+package DieticianMenu;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class SelectUserController {
-    private final SelectUserView view;
-    private final SelectUserModel model;
+public class DieticianMenuController {
+    private final DieticianMenuView view;
+    private final DieticianMenuModel model;
     private final Scanner scanner;
 
-    public SelectUserController(SelectUserModel model, SelectUserView view) {
+    public DieticianMenuController(DieticianMenuModel model, DieticianMenuView view) {
         this.model = model;
         this.view = view;
         this.scanner = new Scanner(System.in);

@@ -1,19 +1,16 @@
-package mainMenu;
+package UserSelection;
 
-import dieticianMenu.DieticianMenu;
-import userMenu.*;
-import utils.Recipe;
-import utils.RecipeReader;
+import DieticianMenu.DieticianMenu;
+import UserMenu.*;
 
 import java.io.FileNotFoundException;
 import java.util.List;
 
 public class SelectUserModel {
     private final List<String> menuOptions = List.of("User", "Dietician");
-    private List<Recipe> recipes;
 
     public SelectUserModel() throws FileNotFoundException {
-        this.recipes= RecipeReader.getRecipes();
+        //this.recipes= RecipeFileReader.getRecipes();
     }
 
     public List<String> getMenuOptions() {
@@ -22,7 +19,7 @@ public class SelectUserModel {
 
     public void handleOption(int selectedOption) throws IndexOutOfBoundsException, FileNotFoundException {
         switch (selectedOption) {
-            case 1 -> new UserMenu(recipes);
+            case 1 -> new UserMenu();
             case 2 -> new DieticianMenu();
             default -> throw new IndexOutOfBoundsException();
         }

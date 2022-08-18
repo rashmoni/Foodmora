@@ -1,22 +1,21 @@
-package dieticianMenu;
+package UserMenu;
 
-import userMenu.UserMenuModel;
-import userMenu.UserMenuView;
-
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
-public class DieticianMenuController {
-    private final DieticianMenuView view;
-    private final DieticianMenuModel model;
+public class UserMenuController {
+    private final UserMenuView view;
+    private final UserMenuModel model;
     private final Scanner scanner;
 
-    public DieticianMenuController(DieticianMenuModel model, DieticianMenuView view) {
+    public UserMenuController(UserMenuModel model, UserMenuView view) {
         this.model = model;
         this.view = view;
         this.scanner = new Scanner(System.in);
     }
 
-    public void requestUserInput() {
+    public void requestUserInput() throws IOException {
         String input = scanner.nextLine();
 
         try {
@@ -24,7 +23,7 @@ public class DieticianMenuController {
 
             model.handleOption(selectedOption);
         }
-        catch (NumberFormatException | IndexOutOfBoundsException exception) {
+        catch (NumberFormatException | IndexOutOfBoundsException | FileNotFoundException exception) {
             view.printInvalidOption();
             view.printRequest();
             requestUserInput();

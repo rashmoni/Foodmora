@@ -7,12 +7,12 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class RecipeReader {
+public class RecipeFileReader {
     private static Scanner scanner1;
     private static Scanner scanner2;
     private static List<Recipe> recipes;
 
-    public RecipeReader() throws FileNotFoundException {
+    public RecipeFileReader() throws FileNotFoundException {
         File ingFile = new File("assets/ingredients.txt");
         File stepsFile = new File("assets/steps.txt");
         scanner1 = new Scanner(ingFile);

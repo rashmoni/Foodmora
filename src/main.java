@@ -1,11 +1,7 @@
-import mainMenu.SelectUser;
-import utils.Recipe;
-import utils.RecipeReader;
-import utils.fileWriter;
+import UserSelection.SelectUser;
+import utils.RecipeFileReader;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class main {
 
@@ -25,7 +21,7 @@ public class main {
 
         fileWriter writer = new fileWriter();
         writer.writeToFile(rc1);*/
-        new RecipeReader();
+        new RecipeFileReader();
         new SelectUser();
     }
 }

@@ -1,17 +1,18 @@
-package userMenu;
+package DieticianMenu;
 
 import utils.PrintHandler;
 
 import java.util.List;
 
-public class UserMenuView {
+public class DieticianMenuView {
 
-    public UserMenuView(List<String> menuOptions) {
+
+    public DieticianMenuView(List<String> menuOptions) {
         PrintHandler.clearScreen();
         PrintHandler.appTitle();
-        System.out.println("User menu:");
+        System.out.println("Dietician Menu:");
         PrintHandler.optionList(menuOptions);
-        PrintHandler.switchToDietician();
+        PrintHandler.switchToUser();
         printRequest();
     }
     public void printInvalidOption() {

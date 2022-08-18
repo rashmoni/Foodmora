@@ -1,7 +1,7 @@
 package ListRecipes;
 
-import userMenu.UserMenu;
-import utils.*;
+import utils.Recipe;
+import utils.RecipeFileReader;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ public class ListRecipesModel {
     private final List<String> userMenuOptions;
     private static List<Recipe> recipes;
 
-    public ListRecipesModel(List<Recipe> recipes) throws FileNotFoundException {
-        this.recipes= recipes;
+    public ListRecipesModel() throws FileNotFoundException {
+        this.recipes = RecipeFileReader.getRecipes();
         this.userMenuOptions = allRecipes(recipes);
     }
 
@@ -20,19 +20,13 @@ public class ListRecipesModel {
         return userMenuOptions;
     }
 
-    private List<String> allRecipes(List<Recipe> recipes){
+    private List<String> allRecipes(List<Recipe> recipes) {
         List<String> allRecipeName = new ArrayList<>();
-        for (int index = 0; index< recipes.size(); index++){
+        for (int index = 0; index < recipes.size(); index++) {
             String resname = recipes.get(index).getName();
             allRecipeName.add(resname);
         }
         return allRecipeName;
     }
 
-    public void handleOption(int selectedOption) throws IndexOutOfBoundsException, FileNotFoundException {
-        switch (selectedOption) {
-            case 0 ->  new UserMenu(recipes);
-            default -> throw new IndexOutOfBoundsException();
-        }
-    }
 }

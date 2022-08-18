@@ -1,18 +1,19 @@
-package ListRecipes;
+package UserMenu;
 
 import utils.PrintHandler;
 
 import java.util.List;
 
-public class ListRecipesView {
-    public ListRecipesView(List<String> menuOptions) {
+public class UserMenuView {
+
+    public UserMenuView(List<String> menuOptions) {
         PrintHandler.clearScreen();
         PrintHandler.appTitle();
-        System.out.println("List of all recipes:");
-        PrintHandler.pintList(menuOptions);
-        exitMenuView();
+        System.out.println("User menu:");
+        PrintHandler.optionList(menuOptions);
+        PrintHandler.switchToDietician();
+        printRequest();
     }
-
     public void printInvalidOption() {
         System.out.println("⚠️ Invalid option");
     }
@@ -27,9 +28,5 @@ public class ListRecipesView {
 
     public void printSongPlaying() {
         System.out.println("▶️ Playing song");
-    }
-
-    public void exitMenuView() {
-        System.out.print("press enter to continue ...");
     }
 }
