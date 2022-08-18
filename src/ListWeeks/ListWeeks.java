@@ -1,9 +1,5 @@
 package ListWeeks;
 
-import ListRecipes.ListRecipesController;
-import ListRecipes.ListRecipesModel;
-import ListRecipes.ListRecipesView;
-
 import java.io.FileNotFoundException;
 
 public class ListWeeks {

@@ -5,7 +5,7 @@ import UserMenu.*;
 
 import java.io.FileNotFoundException;
 import java.util.List;
-import ListRecipes.*;
+import ViewRecipes.*;
 import ViewRecipe.*;
 
 public class DieticianMenuModel {

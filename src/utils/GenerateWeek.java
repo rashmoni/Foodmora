@@ -1,10 +1,5 @@
 package utils;
 
-import DieticianMenu.DieticianMenu;
-import ListRecipes.ListRecipes;
-import ListWeeks.ListWeeks;
-import ViewRecipe.ViewRecipe;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;

@@ -23,10 +23,6 @@ public class ViewRecipeView {
         System.out.print("press enter to continue ...");
     }
 
-    public void printSongNotFoundError() {
-        System.out.println("❌️ Cannot play this song");
-    }
-
     public void printRec(Recipe recipe) {
         PrintHandler.printRecipe(recipe);
     }

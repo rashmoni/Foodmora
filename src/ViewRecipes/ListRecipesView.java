@@ -1,4 +1,4 @@
-package ListRecipes;
+package ViewRecipes;
 
 import utils.PrintHandler;
 

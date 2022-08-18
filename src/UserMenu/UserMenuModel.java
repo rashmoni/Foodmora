@@ -1,12 +1,11 @@
 package UserMenu;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
 import DieticianMenu.DieticianMenu;
 import utils.*;
-import ListRecipes.*;
+import ViewRecipes.*;
 import ViewRecipe.*;
 import ListWeeks.*;
 

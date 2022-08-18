@@ -1,4 +1,4 @@
-package ListRecipes;
+package ViewRecipes;
 
 import DieticianMenu.DieticianMenu;
 import UserMenu.UserMenu;

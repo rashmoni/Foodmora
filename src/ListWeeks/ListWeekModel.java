@@ -10,6 +10,7 @@ import utils.WeekFileReader;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ListWeekModel {
     private final List<String> userMenuOptions;
@@ -49,8 +50,12 @@ public class ListWeekModel {
         }
     }
 
-    private void handleWeek(int weekValue){
+    private void handleWeek(int weekValue) throws FileNotFoundException {
         week = weeks.get(weekValue);
         PrintHandler.printWeek(week);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Press Enter to continue ....");
+        scanner.nextLine();
+        new UserMenu();
     }
 }
