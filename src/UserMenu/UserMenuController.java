@@ -25,7 +25,7 @@ public class UserMenuController {
         }
         catch (NumberFormatException | IndexOutOfBoundsException | FileNotFoundException exception) {
             view.printInvalidOption();
-            view.printRequest();
+            view.printUserPrompt();
             requestUserInput();
         }
     }

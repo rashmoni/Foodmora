@@ -9,14 +9,14 @@ public class SelectUserView {
         PrintHandler.appTitle();
         System.out.println("Main menu options:");
         PrintHandler.optionList(menuOptions);
-        printRequest();
+        printUserPrompt();
     }
 
     public void printInvalidOption() {
-        System.out.println("⚠️ Invalid option");
+        System.out.println("⚠️ Invalid user");
     }
 
-    public void printRequest() {
+    public void printUserPrompt() {
         System.out.print("Choose an option press enter: ");
     }
 }

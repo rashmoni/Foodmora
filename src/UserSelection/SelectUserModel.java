@@ -7,14 +7,10 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 public class SelectUserModel {
-    private final List<String> menuOptions = List.of("User", "Dietician");
+    private final List<String> userOptions = List.of("User", "Dietician");
 
-    public SelectUserModel() throws FileNotFoundException {
-        //this.recipes= RecipeFileReader.getRecipes();
-    }
-
-    public List<String> getMenuOptions() {
-        return menuOptions;
+    public List<String> getUserOptions() {
+        return userOptions;
     }
 
     public void handleOption(int selectedOption) throws IndexOutOfBoundsException, FileNotFoundException {

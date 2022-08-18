@@ -12,21 +12,14 @@ public class UserMenuView {
         System.out.println("User menu:");
         PrintHandler.optionList(menuOptions);
         PrintHandler.switchToDietician();
-        printRequest();
+        printUserPrompt();
     }
     public void printInvalidOption() {
         System.out.println("⚠️ Invalid option");
     }
 
-    public void printRequest() {
-        System.out.print("Choose a song and press enter: ");
+    public void printUserPrompt() {
+        System.out.print("Choose an option and press enter: ");
     }
 
-    public void printSongNotFoundError() {
-        System.out.println("❌️ Cannot play this song");
-    }
-
-    public void printSongPlaying() {
-        System.out.println("▶️ Playing song");
-    }
 }

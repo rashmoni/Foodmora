@@ -1,2 +1,2 @@
 1,peas soup,Boil Water in a pan,Put peas and salt,Mix and stir well
-1,pancakes,Mix wheat butter and sugar,Put batter in frypan,remove and eat
+2,pancakes,Mix wheat butter and sugar,Put batter in frypan,remove and eat
