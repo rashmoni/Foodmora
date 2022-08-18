@@ -1,6 +1,8 @@
 package DieticianMenu;
 
+import javax.imageio.IIOException;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class DieticianMenuController {
@@ -22,10 +24,12 @@ public class DieticianMenuController {
 
             model.handleOption(selectedOption);
         }
-        catch (NumberFormatException | IndexOutOfBoundsException | FileNotFoundException exception) {
+        catch (NumberFormatException | IndexOutOfBoundsException | FileNotFoundException | IIOException exception) {
             view.printInvalidOption();
             view.printRequest();
             requestUserInput();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

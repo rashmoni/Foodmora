@@ -7,7 +7,6 @@ public class PrintHandler {
     public static void appTitle() {
         System.out.println("=== Recipe Manager ==="+"\n");
     }
-
     public static void switchToUser() {
         System.out.println("[0] Switch to User");
     }

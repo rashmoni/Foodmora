@@ -1,8 +1,14 @@
 package utils;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class CreateRecipe {
-    public CreateRecipe(){
-        System.out.println("Create recipe");
+    private Recipe recipe;
+    CreateRecipePrintHandler handler;
+    public CreateRecipe() throws IOException {
+        handler = new CreateRecipePrintHandler();
+        handler.getRecipeInput();
     }
 }
 

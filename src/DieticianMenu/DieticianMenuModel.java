@@ -4,9 +4,12 @@ import utils.*;
 import UserMenu.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import ViewRecipes.*;
 import ViewRecipe.*;
+
+import javax.imageio.IIOException;
 
 public class DieticianMenuModel {
     private final List<String> dieticianMenuOptions = List.of("Create new recipe", "List recipes", "View recepie", "Edit/Update recepie");
@@ -15,7 +18,7 @@ public class DieticianMenuModel {
         return dieticianMenuOptions;
     }
 
-    public void handleOption(int selectedOption) throws IndexOutOfBoundsException, FileNotFoundException {
+    public void handleOption(int selectedOption) throws IndexOutOfBoundsException, IOException {
         switch (selectedOption) {
             case 0 -> new UserMenu();
             case 1 -> new CreateRecipe();

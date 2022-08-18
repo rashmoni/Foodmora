@@ -1,0 +1,2 @@
+1,peas soup,Peas kg 0.2,Water l 1,soup kg 0.1
+2,pancakes,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
