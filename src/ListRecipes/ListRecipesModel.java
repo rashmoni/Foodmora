@@ -1,6 +1,6 @@
-package ViewRecipes;
+package ListRecipes;
 
-import utils.Recipe;
+import Data.Recipe;
 import utils.RecipeFileReader;
 
 import java.io.FileNotFoundException;

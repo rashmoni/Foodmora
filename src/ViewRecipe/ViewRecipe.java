@@ -1,9 +1,6 @@
 package ViewRecipe;
 
-import utils.Recipe;
-
 import java.io.FileNotFoundException;
-import java.util.List;
 
 
 public class ViewRecipe {

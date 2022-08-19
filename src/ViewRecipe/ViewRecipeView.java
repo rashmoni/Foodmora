@@ -1,9 +1,7 @@
 package ViewRecipe;
 
 import utils.PrintHandler;
-import utils.Recipe;
-
-import java.util.List;
+import Data.Recipe;
 
 public class ViewRecipeView {
     public ViewRecipeView() {

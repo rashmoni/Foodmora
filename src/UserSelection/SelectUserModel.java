@@ -1,5 +1,6 @@
 package UserSelection;
 
+import Default.User;
 import DieticianMenu.DieticianMenu;
 import UserMenu.*;
 
@@ -8,7 +9,6 @@ import java.util.List;
 
 public class SelectUserModel {
     private final List<String> userOptions = List.of("User", "Dietician");
-
     public List<String> getUserOptions() {
         return userOptions;
     }

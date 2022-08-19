@@ -1,6 +1,7 @@
-package utils;
+package CreateRecipe;
 
-import java.io.FileNotFoundException;
+import Data.Recipe;
+
 import java.io.IOException;
 
 public class CreateRecipe {

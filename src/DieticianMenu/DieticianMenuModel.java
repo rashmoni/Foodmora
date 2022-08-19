@@ -1,15 +1,13 @@
 package DieticianMenu;
 
-import utils.*;
+import CreateRecipe.CreateRecipe;
+import EditRecipe.EditRecipe;
 import UserMenu.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
-import ViewRecipes.*;
+import ListRecipes.*;
 import ViewRecipe.*;
-
-import javax.imageio.IIOException;
 
 public class DieticianMenuModel {
     private final List<String> dieticianMenuOptions = List.of("Create new recipe", "List recipes", "View recepie", "Edit/Update recepie");

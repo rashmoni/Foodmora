@@ -1,4 +1,4 @@
-package utils;
+package EditRecipe;
 
 public class EditRecipe {
     public EditRecipe(){

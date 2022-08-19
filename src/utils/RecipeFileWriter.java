@@ -1,27 +1,34 @@
 package utils;
 
+import Data.Recipe;
+
 import java.io.*;
 import java.util.List;
+import java.util.Scanner;
 
 public class RecipeFileWriter {
     public static void writeToFile(Recipe rec1) throws IOException {
-        File ingFile = new File("assets/recipe/ingredients.txt");
-        File stepsFile = new File("assets/recipe/steps.txt");
+        String ingFilePath = "assets/recipe/ingredients.txt";
+        String stepsFilePath = "assets/recipe/steps.txt";
+        File ingFile = new File(ingFilePath);
+        File stepsFile = new File(stepsFilePath);
         List ingredients = rec1.getIngredients();
         List steps = rec1.getSteps();
         String Delim = ",";
         String ingStr = String.join(Delim,ingredients);
         String stepsStr = String.join(Delim,steps);
 
-        java.io.FileWriter ingWriter = new java.io.FileWriter(ingFile, true);
-        PrintWriter ingOut = new PrintWriter(ingWriter);
-        ingOut.print("\n"+rec1.getID()+ ","+rec1.getName()+","+ingStr+"\n");
-        ingOut.close();
+        outFileWriter(rec1, ingFile, ingStr);
+        outFileWriter(rec1, stepsFile, stepsStr);
+    }
 
-        java.io.FileWriter stepsWriter = new java.io.FileWriter(stepsFile, true);
+    private static void outFileWriter(Recipe rec, File file, String outString) throws IOException {
+        FileWriter stepsWriter = new FileWriter(file, true);
         PrintWriter stepsOut = new PrintWriter(stepsWriter);
-        stepsOut.print("\n"+rec1.getID()+ ","+rec1.getName()+","+stepsStr+"\n");
+        stepsOut.print("\n"+rec.getID()+ ","+rec.getName()+","+outString+"");
+        stepsWriter.close();
         stepsOut.close();
 
     }
+
 }

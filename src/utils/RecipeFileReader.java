@@ -1,5 +1,7 @@
 package utils;
 
+import Data.Recipe;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

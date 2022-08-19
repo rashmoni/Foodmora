@@ -1,6 +1,10 @@
-package utils;
+package CreateRecipe;
 
-import java.io.FileNotFoundException;
+import Data.Recipe;
+import utils.RecipeFileReader;
+import utils.RecipeFileWriter;
+import utils.UserInput;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +36,7 @@ public class CreateRecipePrintHandler {
             int anotherInput;
 
             System.out.print("Please Enter Ingredient name: ");
-            ingredient.concat(scanner.nextLine());
+            ingredient= ingredient+(scanner.nextLine());
 
             System.out.println();
             System.out.println("[1] Quantity (pc)");
@@ -40,15 +44,15 @@ public class CreateRecipePrintHandler {
             System.out.println("[3] Kilogram (kg)");
 
             selectIngType= input.readInteger("Please select ingredients measurement: ", "Invalid input", 1, 3);
-            switch (selectIngType){
+            if (selectIngType==1)
+                ingredient= ingredient+" pc ";
+            else if ((selectIngType==2)) {
+                ingredient= ingredient+" l ";
+            }else
+                ingredient= ingredient+" kg ";
 
-                case 1: ingredient.concat(" pc");
-                case 2: ingredient.concat(" l");
-                case 3: ingredient.concat(" kg");
-
-            }
             amount = input.readText("Please Enter measurement amount: ");
-            ingredient.concat(amount);
+            ingredient= ingredient+ amount;
 
             if (ingredient!=null && ingredient!=" "){
                 ingredients.add(ingredient);

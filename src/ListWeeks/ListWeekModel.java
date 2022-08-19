@@ -1,10 +1,8 @@
 package ListWeeks;
 
-import DieticianMenu.DieticianMenu;
 import UserMenu.UserMenu;
 import utils.PrintHandler;
-import utils.Recipe;
-import utils.Week;
+import Data.Week;
 import utils.WeekFileReader;
 
 import java.io.FileNotFoundException;
