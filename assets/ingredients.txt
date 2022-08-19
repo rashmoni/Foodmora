@@ -1,3 +1,8 @@
 1,peas soup,Peas kg 0.2,Water l 1,soup kg 0.1
 2,pancakes,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
-3,pancakes,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
+3,veg soup,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
+4,salad,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
+5,veg salad,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
+6,oat meal,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
+7,chicken salad,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
+8,paneer salad,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1

@@ -9,32 +9,13 @@ public class main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-       /* List<String> ingredients = new ArrayList<>();
-        ingredients.add("Peas,kg,0.2");
-        ingredients.add("Water,l,1");
-        ingredients.add("soup,kg,0.1");
-
-        List<String> steps = new ArrayList<>();
-        steps.add("Boil Water in a pan");
-        steps.add("Put peas and salt");
-        steps.add("Mix and stir well");
-
-        Recipe rc1 = new Recipe(1, "peas soup",ingredients,steps);
-
-        fileWriter writer = new fileWriter();
-        writer.writeToFile(rc1);*/
-/*try {
-    new RecipeFileReader();
-    new WeekFileReader();
-    new SelectUser();
-}catch (FileNotFoundException exception){
-    System.out.println("❌ Can't start the app because the file inside the asset folder is missing");
-}*/
-
-        RecipePool pool = new RecipePool();
-        int total = pool.getTotalRecipeCount();
-        System.out.println(total);
-        System.out.println(pool.getRecipe(2));
+        try {
+            new RecipeFileReader();
+            new WeekFileReader();
+            new SelectUser();
+        } catch (FileNotFoundException exception) {
+            System.out.println("❌ Can't start the app because the file inside the asset folder is missing");
+        }
 
 
     }

@@ -1,3 +1,8 @@
 1,peas soup,Boil Water in a pan,Put peas and salt,Mix and stir well
 2,pancakes,Mix wheat butter and sugar,Put batter in frypan,remove and eat
-3,pancakes,wheat kg 0.2,Water l 0.5,sugar kg 0.1,butter kg 0.1
+3,veg soup,Mix wheat butter and sugar,Put batter in frypan,remove and eat
+4,salad,Mix wheat butter and sugar,Put batter in frypan,remove and eat
+5,veg salad,Mix wheat butter and sugar,Put batter in frypan,remove and eat
+6,oat meal,Mix wheat butter and sugar,Put batter in frypan,remove and eat
+7,chicken salad,Mix wheat butter and sugar,Put batter in frypan,remove and eat
+8,paneer salad,Mix wheat butter and sugar,Put batter in frypan,remove and eat

@@ -2,25 +2,29 @@ package GenerateWeek;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-import Data.Recipe;
+import java.util.*;
+import Data.RecipePool;
 import Data.Week;
 import UserMenu.*;
 import utils.*;
 
 public class GenerateWeek {
-
+    RecipePool pool = new RecipePool();
     private final Scanner scanner;
 
-    public GenerateWeek() throws IOException {
+     public GenerateWeek() throws IOException {
         this.scanner = new Scanner(System.in);
+         GenerateNewWeek();
+    }
+
+    public void GenerateNewWeek() throws IOException {
         List<String> allRecNames = getAllRecipeNames();
-        List<String> allWeekNames = getAllWeeks();
-        int WeekNumber = 35;
-        List<String> WeekValue = List.of("37", "rec1", "rec2", "rec3", "rec4", "rec5", "rec6", "rec7");
+        String WeekNumber = String.valueOf(getLatWeekNumber()+1);
+        List<String> WeekValue = new ArrayList<>();
+        List<String> randomList = getRandomElement(allRecNames, 7);
+
+        WeekValue.add(WeekNumber);
+        WeekValue.addAll(randomList);
 
         Week week1 = new Week(WeekValue);
         WeeKFileWriter.writeToFile(week1);
@@ -29,14 +33,7 @@ public class GenerateWeek {
     }
 
     private List<String> getAllRecipeNames() throws FileNotFoundException {
-        RecipeFileReader recipes = new RecipeFileReader();
-        List<Recipe> allRecipes = recipes.getRecipes();
-        List<String> allRecNames = new ArrayList<>();
-        for (int index = 0; index < allRecipes.size(); index++) {
-            String recName = allRecipes.get(index).getName();
-            allRecNames.add(recName);
-        }
-        return allRecNames;
+        return pool.getAllRecipeNames();
     }
 
     private List<String> getAllWeeks() throws FileNotFoundException {
@@ -50,9 +47,31 @@ public class GenerateWeek {
         return allWeekNames;
     }
 
+    private int getLatWeekNumber() throws FileNotFoundException {
+        List<String> allWeeks = getAllWeeks();
+        int lastWeekNumber = Integer.parseInt(allWeeks.get(allWeeks.size()-1).substring(0,2));
+        return lastWeekNumber;
+    }
+
+
     public void requestUserInput() throws IOException {
         String input = scanner.nextLine();
             new UserMenu();
     }
+
+    public static List<String> getRandomElement(List<String> list, int totalItems)
+    {
+        Random rand = new Random();
+
+        List<String> userList = list;
+        List<String> newList = new ArrayList<>();
+        for (int i = 0; i < totalItems; i++) {
+            int randomIndex = rand.nextInt(userList.size());
+            newList.add(userList.get(randomIndex));
+            userList.remove(randomIndex);
+        }
+        return newList;
+    }
+
 
 }
