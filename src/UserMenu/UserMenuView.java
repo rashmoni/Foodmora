@@ -10,7 +10,7 @@ public class UserMenuView {
         PrintHandler.clearScreen();
         PrintHandler.appTitle();
         System.out.println("User menu:");
-        PrintHandler.optionList(menuOptions);
+        PrintHandler.printOptionList(menuOptions);
         PrintHandler.switchToDietician();
         printUserPrompt();
     }

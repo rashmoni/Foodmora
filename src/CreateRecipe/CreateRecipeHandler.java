@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CreateRecipePrintHandler {
+public class CreateRecipeHandler {
 
     public void getRecipeInput() throws IOException {
         RecipeFileReader recipes = new RecipeFileReader();
@@ -43,7 +43,7 @@ public class CreateRecipePrintHandler {
             System.out.println("[2] Liters (l)");
             System.out.println("[3] Kilogram (kg)");
 
-            selectIngType= input.readInteger("Please select ingredients measurement: ", "Invalid input", 1, 3);
+            selectIngType= input.readInteger("Please select ingredients measurement type: ", "Invalid input", 1, 3);
             if (selectIngType==1)
                 ingredient= ingredient+" pc ";
             else if ((selectIngType==2)) {

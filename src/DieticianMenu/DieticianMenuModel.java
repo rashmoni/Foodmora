@@ -10,7 +10,7 @@ import ListRecipes.*;
 import ViewRecipe.*;
 
 public class DieticianMenuModel {
-    private final List<String> dieticianMenuOptions = List.of("Create new recipe", "List recipes", "View recepie", "Edit/Update recepie");
+    private final List<String> dieticianMenuOptions = List.of("Create new recipe", "Edit recepie","List recipes", "View recepie");
 
     public List<String> getMenuOptions() {
         return dieticianMenuOptions;

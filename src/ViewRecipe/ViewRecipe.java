@@ -9,7 +9,6 @@ public class ViewRecipe {
         ViewRecipeModel model = new ViewRecipeModel();
         ViewRecipeView view = new ViewRecipeView();
         ViewRecipeController controller = new ViewRecipeController(model, view, typeOfUser);
-
         controller.requestUserInput();
 
     }

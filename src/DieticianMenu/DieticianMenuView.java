@@ -11,7 +11,7 @@ public class DieticianMenuView {
         PrintHandler.clearScreen();
         PrintHandler.appTitle();
         System.out.println("Dietician Menu:");
-        PrintHandler.optionList(menuOptions);
+        PrintHandler.printOptionList(menuOptions);
         PrintHandler.switchToUser();
         printRequest();
     }
@@ -20,14 +20,7 @@ public class DieticianMenuView {
     }
 
     public void printRequest() {
-        System.out.print("Choose a song and press enter: ");
+        System.out.print("Choose an option and press enter: ");
     }
 
-    public void printSongNotFoundError() {
-        System.out.println("❌️ Cannot play this song");
-    }
-
-    public void printSongPlaying() {
-        System.out.println("▶️ Playing song");
-    }
 }

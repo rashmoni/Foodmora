@@ -32,7 +32,7 @@ public class PrintHandler {
     }
 
 
-    public static void optionList(List<String> options) {
+    public static void printOptionList(List<String> options) {
         for (int index = 0; index < options.size(); index++) {
             int number = index + 1;
             String label = options.get(index);

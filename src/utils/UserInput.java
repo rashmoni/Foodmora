@@ -8,21 +8,16 @@ public class UserInput {
         in = new Scanner(System.in);
     }
 
-    //this method forces user to input only valid integer within required range
     public int readInteger(String promptMsg, String errorMsg, int low, int high){
         int num = 0;
         String strInput;
         boolean valid = false;
-        //loop until user input valid value
         while (!valid){
-            //prompt user for input
             System.out.print(promptMsg);
-            //User input from keyboard
             strInput = in.nextLine();
-            //try block to convert string to int
+
             try{
                 num = Integer.parseInt(strInput);
-                //check if the input is in valid range
                 if(num>=low && num <= high)
                     valid=true;
                 else
@@ -35,17 +30,15 @@ public class UserInput {
         return num;
     }
 
-    //this method returns text input for search
     public String readText(String promptMsg){
         String strInput = null;
-        //prompt user for input
         System.out.print(promptMsg);
-        //User input from keyboard
         strInput = in.nextLine();
 
-        while ((strInput.equals(" "))) {
+        while ((strInput.equals(""))) {
             System.out.print("\u26A0 Invalid Entry, Please enter valid search value :");
             strInput = in.nextLine();
+            strInput.trim();
         }
         return strInput;
     }

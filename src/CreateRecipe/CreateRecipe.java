@@ -6,9 +6,9 @@ import java.io.IOException;
 
 public class CreateRecipe {
     private Recipe recipe;
-    CreateRecipePrintHandler handler;
+    CreateRecipeHandler handler;
     public CreateRecipe() throws IOException {
-        handler = new CreateRecipePrintHandler();
+        handler = new CreateRecipeHandler();
         handler.getRecipeInput();
     }
 }

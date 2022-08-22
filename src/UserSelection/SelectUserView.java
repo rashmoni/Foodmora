@@ -8,7 +8,7 @@ public class SelectUserView {
         PrintHandler.clearScreen();
         PrintHandler.appTitle();
         System.out.println("Main menu options:");
-        PrintHandler.optionList(menuOptions);
+        PrintHandler.printOptionList(menuOptions);
         printUserPrompt();
     }
 
