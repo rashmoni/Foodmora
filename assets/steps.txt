@@ -1,7 +1,7 @@
-1,peas soup,Boil Water in a pan,Put peas and salt,Mix and stir well
+1,peas soup,Boil water in a pan,Put peas and salt,Mix and stir well
 2,pancakes,Mix wheat butter and sugar,Put batter in frypan,remove and eat
 3,veg soup,Boil water,Put salt and veg on boil water,Grind veg and make a smooth paste,Heat a pan and put buter and veg paste, pour veg stock and pepper,remove and eat
-4,salad,Cut Cucumber,Onion,Tomato,chili,Add oil,salt and mix well,Ready to eat
+4,salad,Cut Cucumber,Add oil,salt and mix well,Ready to eat
 5,Baked chicken,Slice the chicken,Mix the spices,Season the chicken in a baking pan,Baked in the oven,Sprinkled grated cheese,Serve
 6,Omlette,Slice onion and cut potatoes into cubes,Heat a pan with oil,Mix the Eggs with spices and pour veggies,Baked in the open,Ready to serve
 7,chicken salad,cut veggies,Boil chicken,mix chicken and veggies,Mix the spices,Ready to serve

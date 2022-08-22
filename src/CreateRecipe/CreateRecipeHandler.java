@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CreateRecipeHandler {
-
+    Scanner scanner = new Scanner(System.in);
+    UserInput input = new UserInput();
     public void getRecipeInput() throws IOException {
         RecipeFileReader recipes = new RecipeFileReader();
         List<Recipe> allRecipes= recipes.generateRecipes();
@@ -25,38 +26,11 @@ public class CreateRecipeHandler {
         boolean takeStepInput = true;
 
         System.out.print("Please Enter Recipe Name: ");
-        Scanner scanner = new Scanner(System.in);
         recipeName = scanner.nextLine();
 
         while(takeIngInput){
-            String ingredient = "";
-            UserInput input = new UserInput();
-            int selectIngType;
-            String amount;
             int anotherInput;
-
-            System.out.print("Please Enter Ingredient name: ");
-            ingredient= ingredient+(scanner.nextLine());
-
-            System.out.println();
-            System.out.println("[1] Quantity (pc)");
-            System.out.println("[2] Liters (l)");
-            System.out.println("[3] Kilogram (kg)");
-
-            selectIngType= input.readInteger("Please select ingredients measurement type: ", "Invalid input", 1, 3);
-            if (selectIngType==1)
-                ingredient= ingredient+" pc ";
-            else if ((selectIngType==2)) {
-                ingredient= ingredient+" l ";
-            }else
-                ingredient= ingredient+" kg ";
-
-            amount = input.readText("Please Enter measurement amount: ");
-            ingredient= ingredient+ amount;
-
-            if (ingredient!=null && ingredient!=" "){
-                ingredients.add(ingredient);
-            }
+            ingredients = inputIngredients();
             System.out.println("[1] Enter More Ingredients: ");
             System.out.println("[0] Enter Steps: ");
             anotherInput= input.readInteger("Select 1 for more input: ", "Invalid input", 0, 1);
@@ -64,7 +38,6 @@ public class CreateRecipeHandler {
                 takeIngInput=false;
 
             }
-
 
         }
 
@@ -92,6 +65,37 @@ public class CreateRecipeHandler {
         RecipeFileWriter writer = new RecipeFileWriter();
         writer.writeToFile(rc);
         System.out.println(rc);
+    }
+
+    public List<String> inputIngredients(){
+        List<String> ingredients = new ArrayList<>();
+        String ingredient = "";
+        int selectIngType;
+        String amount;
+        System.out.print("Please Enter Ingredient name: ");
+        ingredient= ingredient+(scanner.nextLine());
+
+
+        System.out.println();
+        System.out.println("[1] Quantity (pc)");
+        System.out.println("[2] Liters (l)");
+        System.out.println("[3] Kilogram (kg)");
+
+        selectIngType= input.readInteger("Please select ingredients measurement type: ", "Invalid input", 1, 3);
+        if (selectIngType==1)
+            ingredient= ingredient+" pc ";
+        else if ((selectIngType==2)) {
+            ingredient= ingredient+" l ";
+        }else
+            ingredient= ingredient+" kg ";
+
+        amount = input.readText("Please Enter measurement amount: ");
+        ingredient= ingredient+ amount;
+
+        if (ingredient!="" && ingredient!=" "){
+            ingredients.add(ingredient);
+        }
+        return ingredients;
     }
 
 }

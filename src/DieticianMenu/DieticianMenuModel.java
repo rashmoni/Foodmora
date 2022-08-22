@@ -1,7 +1,7 @@
 package DieticianMenu;
 
 import CreateRecipe.CreateRecipe;
-import EditRecipe.EditRecipe;
+import EditRecipe.EditRecipeHandler;
 import UserMenu.*;
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class DieticianMenuModel {
         switch (selectedOption) {
             case 0 -> new UserMenu();
             case 1 -> new CreateRecipe();
-            case 2 -> new EditRecipe();
+            case 2 -> new EditRecipeHandler();
             case 3 -> new ListRecipes("dietician");
             case 4 -> new ViewRecipe("dietician");
             default -> throw new IndexOutOfBoundsException();
