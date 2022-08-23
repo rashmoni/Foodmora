@@ -3,14 +3,18 @@ package Data;
 import java.util.List;
 
 public class Week implements java.io.Serializable{
-    private final List<String> week;
-
-    public Week(List<String> week) {
-        this.week = week;
+    private final List<String> weekValues;
+    private final int weekNumber;
+    public Week (List<String> weekValues, int weekNumber){
+        this.weekValues = weekValues;
+        this.weekNumber= weekNumber;
+    }
+    public List<String> getWeek(){
+        return weekValues;
     }
 
-    public List<String> getWeek(){
-        return this.week;
+    public int getWeekNumber(){
+        return weekNumber;
     }
 
 }

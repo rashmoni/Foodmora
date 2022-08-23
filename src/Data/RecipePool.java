@@ -7,16 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipePool {
-    public static List<Recipe> getRecipes() {
-        return recipes;
-    }
-
     private int totalRecipeCount;
     private static List<Recipe> recipes;
 
     public RecipePool() throws FileNotFoundException {
         this.recipes=getAllRecipes();
         this.totalRecipeCount=getTotalRecipeCount();
+    }
+    public static List<Recipe> getRecipes() {
+        return recipes;
     }
 
     private List<Recipe> getAllRecipes() throws FileNotFoundException {

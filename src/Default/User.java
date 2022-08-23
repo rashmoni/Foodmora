@@ -17,10 +17,6 @@ public class User extends Person implements IUser {
 
     }
 
-    @Override
-    public void viewRecipe() throws FileNotFoundException {
-        new ViewRecipe("User");
-    }
 
     @Override
     public void ListRecipe() {

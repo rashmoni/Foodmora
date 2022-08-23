@@ -20,12 +20,13 @@ public class WeekFileReader {
     public static List<Week> getWeeks() {
         return weeks;
     }
-    public List<Week> generateWeeks() throws FileNotFoundException {
+    private List<Week> generateWeeks() throws FileNotFoundException {
         List<Week> weeks = new ArrayList<>();
         while (scanner.hasNextLine()) {
             String singleWeekDataString = scanner.nextLine();
+            int weekNumber = Integer.parseInt(singleWeekDataString.substring(0,2));
             List<String> singleWeekDataList = List.of(singleWeekDataString.split(","));
-            Week week = new Week(singleWeekDataList);
+            Week week = new Week(singleWeekDataList, weekNumber);
             weeks.add(week);
         }
 

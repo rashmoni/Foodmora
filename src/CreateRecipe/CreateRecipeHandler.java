@@ -1,10 +1,12 @@
 package CreateRecipe;
 
 import Data.Recipe;
+import Data.RecipePool;
 import utils.RecipeFileReader;
 import utils.RecipeFileWriter;
 import utils.UserInput;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,20 +15,23 @@ import java.util.Scanner;
 public class CreateRecipeHandler {
     Scanner scanner = new Scanner(System.in);
     UserInput input = new UserInput();
+
+    RecipePool pool = new RecipePool();
+
+    public CreateRecipeHandler() throws FileNotFoundException {
+    }
+
     public void getRecipeInput() throws IOException {
         RecipeFileReader recipes = new RecipeFileReader();
-        List<Recipe> allRecipes= recipes.generateRecipes();
-        int totalRecipes = allRecipes.size();
+        List<Recipe> allRecipes = pool.getRecipes();
+        int totalRecipes = pool.getTotalRecipeCount();
         String recipeName;
         List<String> ingredients = new ArrayList<>();
         List<String> steps = new ArrayList<>();
-        int numberOfIngredients = 0;
-        int numberOfSteps = 0;
         boolean takeIngInput = true;
         boolean takeStepInput = true;
 
-        System.out.print("Please Enter Recipe Name: ");
-        recipeName = scanner.nextLine();
+        recipeName = input.readText("Please Enter Recipe Name: ");
 
         while(takeIngInput){
             int anotherInput;
@@ -48,7 +53,7 @@ public class CreateRecipeHandler {
 
             Step = Step + input.readText("Please Enter steps: ");
             System.out.println("[1] Enter More Steps: ");
-            System.out.println("[0] Exit: ");
+            System.out.println("[0] Save: ");
 
             if (Step!=null && Step!=" "){
                 steps.add(Step);
@@ -70,27 +75,18 @@ public class CreateRecipeHandler {
     public List<String> inputIngredients(){
         List<String> ingredients = new ArrayList<>();
         String ingredient = "";
-        int selectIngType;
+        String selectIngType;
         String amount;
-        System.out.print("Please Enter Ingredient name: ");
-        ingredient= ingredient+(scanner.nextLine());
 
 
-        System.out.println();
-        System.out.println("[1] Quantity (pc)");
-        System.out.println("[2] Liters (l)");
-        System.out.println("[3] Kilogram (kg)");
+        ingredient= input.readText("Please enter ingredient name: ");
 
-        selectIngType= input.readInteger("Please select ingredients measurement type: ", "Invalid input", 1, 3);
-        if (selectIngType==1)
-            ingredient= ingredient+" pc ";
-        else if ((selectIngType==2)) {
-            ingredient= ingredient+" l ";
-        }else
-            ingredient= ingredient+" kg ";
+
+        selectIngType= input.slectIngType("Please select ingredients measurement type (pc/l/kg): ");
+        ingredient= ingredient+" "+selectIngType;
 
         amount = input.readText("Please Enter measurement amount: ");
-        ingredient= ingredient+ amount;
+        ingredient= ingredient+" "+ amount;
 
         if (ingredient!="" && ingredient!=" "){
             ingredients.add(ingredient);

@@ -22,7 +22,7 @@ public class UserMenuModel {
             case 0 -> new DieticianMenu();
             case 1 -> new ListWeeks();
             case 2 -> new ListRecipes("User");
-            case 3 -> user.viewRecipe();
+            case 3 -> user.viewRecipe("user");
             //case 3 -> new ViewRecipe("User");
             case 4 -> new GenerateWeek();
             default -> throw new IndexOutOfBoundsException();

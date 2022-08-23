@@ -4,17 +4,19 @@ import utils.PrintHandler;
 import Data.Recipe;
 
 public class ViewRecipeView {
-    public ViewRecipeView() {
+    int totalRecipe;
+    public ViewRecipeView(int totalRecipe ) {
         PrintHandler.clearScreen();
-        printRequest();
+        this.totalRecipe= totalRecipe;
+        printUserPrompt();
     }
 
     public void printInvalidOption() {
-        System.out.println("⚠️ Recipe not found, please enter correct recepie id: ");
+        System.out.println("⚠️ please enter correct recepie id: ");
     }
 
-    public void printRequest() {
-        System.out.print("Enter valid recipe ID: ");
+    public void printUserPrompt() {
+        System.out.print("Enter recipe ID between 1 and "+totalRecipe + " : ");
     }
 
     public void exitMenuView() {

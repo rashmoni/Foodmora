@@ -1,27 +1,27 @@
 package ViewRecipe;
 
 import Data.Recipe;
-import utils.RecipeFileReader;
-
+import Data.RecipePool;
 import java.io.FileNotFoundException;
-import java.util.List;
 
 public class ViewRecipeModel {
-    private static List<Recipe> recipes;
     private  Recipe recipe;
-
-    public ViewRecipeModel() {
-        this.recipes = RecipeFileReader.getRecipes();
+    RecipePool pool;
+    public ViewRecipeModel() throws FileNotFoundException {
+        this.pool = new RecipePool();
     }
 
-    public Recipe getRecipe() {
+    public int allRecipes() throws FileNotFoundException {
+        return pool.getTotalRecipeCount();
+    }
+
+public Recipe getRecipe(){
         return recipe;
-    }
-
+}
     public void handleOption(int selectedOption) throws IndexOutOfBoundsException, FileNotFoundException {
 
         if (selectedOption>0)
-                recipe = recipes.get(selectedOption-1);
+                recipe = pool.getRecipeByID(selectedOption-1);
         else
             throw new IndexOutOfBoundsException();
         }

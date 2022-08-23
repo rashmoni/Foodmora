@@ -7,12 +7,13 @@ import utils.EditRecordFiles;
 import utils.PrintHandler;
 import utils.UserInput;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EditIngredients {
     static UserInput input = new UserInput();
-    public static void add(int userSelection, RecipePool pool){
+    public static void add(int userSelection, RecipePool pool) throws FileNotFoundException {
         Recipe oldRecipe = pool.getRecipeByID(userSelection-1);
         List<String> oldIngredient = oldRecipe.getIngredients();
         List<String> newIngredient = new ArrayList<>();

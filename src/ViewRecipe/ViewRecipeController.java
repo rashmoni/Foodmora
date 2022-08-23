@@ -29,7 +29,7 @@ public class ViewRecipeController {
             new UserMenu();
         } catch (NumberFormatException | IndexOutOfBoundsException | FileNotFoundException exception) {
             view.printInvalidOption();
-            view.printRequest();
+            view.printUserPrompt();
             requestUserInput();
         }
     }
