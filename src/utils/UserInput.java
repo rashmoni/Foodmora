@@ -43,4 +43,10 @@ public class UserInput {
         return strInput;
     }
 
+    public void pressEnter(){
+        System.out.print("Press Enter to continue...");
+        String abc  = in.nextLine();
+
+    }
+
 }

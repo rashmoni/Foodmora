@@ -39,8 +39,6 @@ public class EditSteps {
         PrintHandler.printOptionList(optionList);
         int selectedStep = input.readInteger("Select the step you want to delete: ", "Select valid recipe",1,optionList.size());
         newSteps.remove(selectedStep+1);
-        System.out.println(oldSteps);
-        System.out.println(newSteps);
         String oldStepsStr = String.join(",",oldSteps);
         String newStepsStr = String.join(",",newSteps);
         EditRecordFiles.edit("assets/steps.txt", oldStepsStr, newStepsStr);

@@ -1,6 +1,7 @@
 package EditRecipe;
 
 import Data.RecipePool;
+import DieticianMenu.DieticianMenu;
 import utils.PrintHandler;
 import utils.UserInput;
 import java.io.*;
@@ -24,11 +25,13 @@ public class EditRecipeHandler {
         PrintHandler.printOptionList(editMenuOptions);
         selectedEditOption = input.readInteger("Select an option: ", "Invalid option: ",1,allEditCount);
         switch (selectedEditOption){
-            case 1: EditSteps.add(userSelection, pool);
-            case 2: EditSteps.delete(userSelection, pool);
-            case 3: EditIngredients.add(userSelection, pool);
-            case 4: EditIngredients.delete();
+            case 1: EditSteps.add(userSelection, pool);break;
+            case 2: EditSteps.delete(userSelection, pool);break;
+            case 3: EditIngredients.add(userSelection, pool);break;
+            case 4: EditIngredients.delete(userSelection,pool);break;
         }
+        input.pressEnter();
+        new DieticianMenu();
 
     }
 

@@ -1,4 +1,4 @@
-1,peas soup,Peas kg 0.2,Water l 1,soup kg 0.1
+1,peas soup,Peas kg 0.2,Water l 1,salt kg 0.002,butter kg 0.005
 2,pancakes,wheat kg 0.4,Water l 0.5,sugar kg 0.1,butter kg 0.1
 3,veg soup,vegetables kg 0.2,water l 0.1,salt kg 0.001
 4,salad,cucumber pc 1,onion pc 1,tomato pc 1,salt kg 0.02,pepper kg 0.001
