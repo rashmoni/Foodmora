@@ -1,12 +1,12 @@
 package EditRecipe;
 
 import CreateRecipe.CreateRecipeHandler;
+import CreateRecipe.Ingredients;
 import Data.Recipe;
 import Data.RecipePool;
 import utils.EditRecordFiles;
 import utils.PrintHandler;
 import utils.UserInput;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,8 @@ public class EditIngredients {
         List<String> oldIngredient = oldRecipe.getIngredients();
         List<String> newIngredient = new ArrayList<>();
         CreateRecipeHandler handler = new CreateRecipeHandler();
-        List<String> ingredient = handler.inputIngredients();
+        //List<String> ingredient = handler.inputIngredients();
+        List<String> ingredient = Ingredients.inputIngredient();
         String IngStr = String.join(",",ingredient);
 
         newIngredient.addAll(oldIngredient);

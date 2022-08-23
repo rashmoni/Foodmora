@@ -9,7 +9,7 @@ public class CreateRecipe {
     CreateRecipeHandler handler;
     public CreateRecipe() throws IOException {
         handler = new CreateRecipeHandler();
-        handler.getRecipeInput();
+        handler.generateNewRecipe();
     }
 }
 

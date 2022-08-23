@@ -30,7 +30,7 @@ public class EditRecipeHandler {
             case 3: EditIngredients.add(userSelection, pool);break;
             case 4: EditIngredients.delete(userSelection,pool);break;
         }
-        input.pressEnter();
+        input.pressEnterContinue();
         new DieticianMenu();
 
     }
