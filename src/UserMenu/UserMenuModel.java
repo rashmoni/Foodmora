@@ -11,7 +11,7 @@ import ViewRecipe.*;
 import ListWeeks.*;
 
 public class UserMenuModel {
-    private final List<String> userMenuOptions = List.of("List my weeks", "List recipes", "View recepie", "Generate a new week");
+    private final List<String> userMenuOptions = List.of("List my weeks", "List recipes", "View recepie", "Generate new week");
     public List<String> getMenuOptions() {
         return userMenuOptions;
     }

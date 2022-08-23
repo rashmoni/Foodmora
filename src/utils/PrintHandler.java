@@ -77,7 +77,6 @@ public class PrintHandler {
         List<String> weekValues = week.getWeek();
         String weekNumber = weekValues.get(0);
 
-
         System.out.println("Items for Week " +weekNumber+ " : ");
         System.out.println("1. Monday    " + "\t"+weekValues.get(1));
         System.out.println("2. Tuesday   " + "\t"+weekValues.get(2));
@@ -86,7 +85,6 @@ public class PrintHandler {
         System.out.println("5. Friday    " + "\t"+weekValues.get(5));
         System.out.println("6. Saturday  " + "\t"+weekValues.get(6));
         System.out.println("7. Sunday    " + "\t"+weekValues.get(7));
-
     }
 
     private static void clearScreenUnix() {

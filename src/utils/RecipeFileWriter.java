@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class RecipeFileWriter {
     public static void writeToFile(Recipe rec1) throws IOException {
-        String ingFilePath = "assets/recipe/ingredients.txt";
-        String stepsFilePath = "assets/recipe/steps.txt";
+        String ingFilePath = "assets/ingredients.txt";
+        String stepsFilePath = "assets/steps.txt";
         File ingFile = new File(ingFilePath);
         File stepsFile = new File(stepsFilePath);
         List ingredients = rec1.getIngredients();
