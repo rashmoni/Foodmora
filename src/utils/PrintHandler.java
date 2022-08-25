@@ -23,9 +23,6 @@ public class PrintHandler {
         System.out.println("[0] Go Back");
     }
 
-    public static void previousMenu() {
-        System.out.print("Enter 0 to go back to previous menu: ");
-    }
     public static void clearScreen() {
         String OperatingSystem = System.getProperty("os.name");
 

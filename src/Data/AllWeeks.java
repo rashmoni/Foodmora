@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllWeeks {
-    private int totalWeekCount;
+    private final int totalWeekCount;
     private static List<Week> weeks;
 
     public AllWeeks() throws FileNotFoundException {
@@ -16,9 +16,6 @@ public class AllWeeks {
         this.totalWeekCount= weeks.size();
     }
 
-    public List<Week> getAllWeeks(){
-        return weeks;
-    }
 
     public Week getWeek(int weekIndex){
         return weeks.get(weekIndex);
@@ -36,8 +33,8 @@ public class AllWeeks {
 
     public List<String> getAllWeekNames() {
         List<String> allWeekValues = new ArrayList<>();
-        for (int index = 0; index < weeks.size(); index++) {
-            String weekVal = "Week " + weeks.get(index).getWeek().get(0);
+        for (Week week : weeks) {
+            String weekVal = "Week " + week.getWeek().get(0);
             allWeekValues.add(weekVal);
         }
         return allWeekValues;

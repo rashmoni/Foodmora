@@ -3,7 +3,7 @@ package utils;
 import java.util.Scanner;
 
 public class UserInput {
-    private Scanner in;
+    private final Scanner in;
     public UserInput(){
         in = new Scanner(System.in);
     }
@@ -31,7 +31,7 @@ public class UserInput {
     }
 
     public String readText(String promptMsg){
-        String strInput = null;
+        String strInput;
         System.out.print(promptMsg);
         strInput = in.nextLine();
 
@@ -54,14 +54,10 @@ public class UserInput {
     }
 
     public String slectIngType(String promptMsg){
-        String strInput = "";
+        String strInput;
         System.out.print(promptMsg);
         strInput = in.nextLine();
-        boolean validInput = true;
-
-        if ((strInput.equalsIgnoreCase("kg")) || (strInput.equalsIgnoreCase("l")) || (strInput.equalsIgnoreCase("pc"))){
-            validInput = false;
-        }
+        boolean validInput = (!strInput.equalsIgnoreCase("kg")) && (!strInput.equalsIgnoreCase("l")) && (!strInput.equalsIgnoreCase("pc"));
 
         while (validInput){
             System.out.print("\u26A0 Invalid Entry, Please enter valid search value :");

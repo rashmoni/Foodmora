@@ -24,10 +24,7 @@ public class Steps {
             Step = Step + input.readText("Please Enter a step: ");
             System.out.println("[1] Enter More Steps: ");
             System.out.println("[0] Save: ");
-
-            if (Step != null && Step != " ") {
-                steps.add(Step);
-            }
+            steps.add(Step);
             anotherInput = input.readInteger("Select 1 for more input: ", "Invalid input", 0, 1);
             if (anotherInput == 0) {
                 takeStepInput = false;

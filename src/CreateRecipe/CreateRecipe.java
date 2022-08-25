@@ -5,8 +5,6 @@ import Data.RecipePool;
 import DieticianMenu.DieticianMenu;
 import utils.RecipeFileWriter;
 import utils.UserInput;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 

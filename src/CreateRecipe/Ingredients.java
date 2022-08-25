@@ -32,7 +32,7 @@ public class Ingredients {
     }
 
     public static List<String> inputIngredient(){
-        String ingredient = "";
+        String ingredient;
         String selectIngType;
         String amount;
 
@@ -41,9 +41,7 @@ public class Ingredients {
         ingredient = ingredient +" "+ selectIngType;
         amount = input.readText("Please Enter measurement amount: ");
         ingredient= ingredient+" "+ amount;
-        if (ingredient!="" && ingredient!=" "){
-            ingredients.add(ingredient);
-        }
+        ingredients.add(ingredient);
         return ingredients;
     }
 }

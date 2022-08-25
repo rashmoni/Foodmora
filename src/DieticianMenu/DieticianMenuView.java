@@ -5,8 +5,7 @@ import utils.PrintHandler;
 import java.util.List;
 
 public class DieticianMenuView {
-
-
+    
     public DieticianMenuView(List<String> menuOptions) {
         PrintHandler.clearScreen();
         PrintHandler.appTitle();

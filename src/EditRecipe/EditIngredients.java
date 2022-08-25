@@ -13,15 +13,14 @@ import java.util.List;
 
 public class EditIngredients {
     static UserInput input = new UserInput();
-    private static String ingFilePath = FilePathReader.IngPath;
+    private static final String ingFilePath = FilePathReader.IngPath;
     public static void add(int userSelection, RecipePool pool)  {
         Recipe oldRecipe = pool.getRecipeByID(userSelection-1);
         List<String> oldIngredient = oldRecipe.getIngredients();
-        List<String> newIngredient = new ArrayList<>();
         List<String> ingredient = Ingredients.inputIngredient();
         String IngStr = String.join(",",ingredient);
 
-        newIngredient.addAll(oldIngredient);
+        List<String> newIngredient = new ArrayList<>(oldIngredient);
         newIngredient.add(IngStr);
         String newIngStr = String.join(",",newIngredient);
         String oldIngStr = String.join(",",oldIngredient);
@@ -33,13 +32,12 @@ public class EditIngredients {
         Recipe oldRecipe = pool.getRecipeByID(userSelection-1);
         List<String> oldIngredient = oldRecipe.getIngredients();
         List<String> optionList = new ArrayList<>();
-        List<String> newIngredient = new ArrayList<>();
 
         for (int index=2; index<oldIngredient.size();index++ ){
             optionList.add(oldIngredient.get(index));
         }
 
-        newIngredient.addAll(oldIngredient);
+        List<String> newIngredient = new ArrayList<>(oldIngredient);
         PrintHandler.printOptionList(optionList);
         int selectedIngredient = input.readInteger("Select the ingredient you want to delete: ", "Select valid ingredient",1,optionList.size());
         newIngredient.remove(selectedIngredient+1);

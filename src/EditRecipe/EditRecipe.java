@@ -24,11 +24,11 @@ public class EditRecipe {
         userSelection = input.readInteger("Select recipe: ", "Invalid option: ",1,allRecipeCount);
         PrintHandler.printOptionList(editMenuOptions);
         selectedEditOption = input.readInteger("Select an option: ", "Invalid option: ",1,allEditCount);
-        switch (selectedEditOption){
-            case 1: EditSteps.add(userSelection, pool);break;
-            case 2: EditSteps.delete(userSelection, pool);break;
-            case 3: EditIngredients.add(userSelection, pool);break;
-            case 4: EditIngredients.delete(userSelection,pool);break;
+        switch (selectedEditOption) {
+            case 1 -> EditSteps.add(userSelection, pool);
+            case 2 -> EditSteps.delete(userSelection, pool);
+            case 3 -> EditIngredients.add(userSelection, pool);
+            case 4 -> EditIngredients.delete(userSelection, pool);
         }
         input.oprationSaveSuccess();
         new DieticianMenu();

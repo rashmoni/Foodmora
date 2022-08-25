@@ -7,15 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipePool {
-    private int totalRecipeCount;
     private static List<Recipe> recipes;
 
     public RecipePool() throws FileNotFoundException {
         this.recipes=getAllRecipes();
-        this.totalRecipeCount=getTotalRecipeCount();
-    }
-    public static List<Recipe> getRecipes() {
-        return recipes;
     }
 
     private List<Recipe> getAllRecipes() throws FileNotFoundException {
@@ -28,14 +23,13 @@ public class RecipePool {
     }
 
     public Recipe getRecipeByID(int ID){
-        Recipe recipe = recipes.get(ID);
-        return recipe;
+        return recipes.get(ID);
     }
 
     public List<String> getAllRecipeNames(){
         List<String> allRecNames = new ArrayList<>();
-        for (int index = 0; index < recipes.size(); index++) {
-            String recName = recipes.get(index).getName();
+        for (Recipe recipe : recipes) {
+            String recName = recipe.getName();
             allRecNames.add(recName);
         }
         return allRecNames;

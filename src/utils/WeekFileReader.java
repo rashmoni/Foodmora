@@ -20,7 +20,7 @@ public class WeekFileReader {
     public static List<Week> getWeeks() {
         return weeks;
     }
-    private List<Week> generateWeeks() throws FileNotFoundException {
+    private List<Week> generateWeeks() {
         List<Week> weeks = new ArrayList<>();
         while (scanner.hasNextLine()) {
             String singleWeekDataString = scanner.nextLine();

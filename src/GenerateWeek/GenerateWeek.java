@@ -5,7 +5,6 @@ import java.util.*;
 import Data.AllWeeks;
 import Data.RecipePool;
 import Data.Week;
-import Default.User;
 import UserMenu.UserMenu;
 import utils.*;
 

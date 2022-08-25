@@ -5,10 +5,6 @@ import java.util.List;
 
 import Default.User;
 import DieticianMenu.DieticianMenu;
-import GenerateWeek.GenerateWeek;
-import ListRecipes.*;
-import ViewRecipe.*;
-import ListWeeks.*;
 
 public class UserMenuModel {
     private final List<String> userMenuOptions = List.of("List my weeks", "List recipes", "View recepie", "Generate new week");

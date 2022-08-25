@@ -4,7 +4,6 @@ import Data.Recipe;
 
 import java.io.*;
 import java.util.List;
-import java.util.Scanner;
 
 public class RecipeFileWriter {
     public static void writeToFile(Recipe recipe) throws IOException {
@@ -12,8 +11,8 @@ public class RecipeFileWriter {
         String stepsFilePath = FilePathReader.stepPath;
         File ingFile = new File(ingFilePath);
         File stepsFile = new File(stepsFilePath);
-        List ingredients = recipe.getIngredients();
-        List steps = recipe.getSteps();
+        List<String> ingredients = recipe.getIngredients();
+        List<String> steps = recipe.getSteps();
         String Delim = ",";
         String ingStr = String.join(Delim,ingredients);
         String stepsStr = String.join(Delim,steps);

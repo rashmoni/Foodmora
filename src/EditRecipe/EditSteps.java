@@ -11,13 +11,12 @@ import java.util.List;
 
 public class EditSteps {
     static UserInput input = new UserInput();
-    private static String StepFilePath = FilePathReader.stepPath;
+    private final static String StepFilePath = FilePathReader.stepPath;
     public static void add(int userSelection, RecipePool pool){
         Recipe oldRecipe = pool.getRecipeByID(userSelection-1);
         List<String> oldSteps = oldRecipe.getSteps();
-        List<String> newSteps = new ArrayList<>();
 
-        newSteps.addAll(oldSteps);
+        List<String> newSteps = new ArrayList<>(oldSteps);
         String newStep = input.readText("Please enter the step you want to add: ");
         newSteps.add(newStep);
         String oldStepsStr = String.join(",",oldSteps);
@@ -30,13 +29,12 @@ public class EditSteps {
         Recipe oldRecipe = pool.getRecipeByID(userSelection-1);
         List<String> oldSteps = oldRecipe.getSteps();
         List<String> optionList = new ArrayList<>();
-        List<String> newSteps = new ArrayList<>();
 
         for (int index=2; index<oldSteps.size();index++ ){
             optionList.add(oldSteps.get(index));
         }
 
-        newSteps.addAll(oldSteps);
+        List<String> newSteps = new ArrayList<>(oldSteps);
         PrintHandler.printOptionList(optionList);
         int selectedStep = input.readInteger("Select the step you want to delete: ", "Select valid recipe",1,optionList.size());
         newSteps.remove(selectedStep+1);

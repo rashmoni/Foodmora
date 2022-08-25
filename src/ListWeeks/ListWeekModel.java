@@ -5,18 +5,14 @@ import UserMenu.UserMenu;
 import utils.PrintHandler;
 import Data.Week;
 import utils.UserInput;
-import utils.WeekFileReader;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class ListWeekModel {
     UserInput input = new UserInput();
-    private List<String> userMenuOptions;
-    private AllWeeks weeks ;
-    private Week week;
+    private final List<String> userMenuOptions;
+    private final AllWeeks  weeks ;
 
     public ListWeekModel() throws FileNotFoundException {
         this.weeks = new AllWeeks();
@@ -40,7 +36,7 @@ public class ListWeekModel {
     }
 
     private void handleWeek(int weekValue) throws FileNotFoundException {
-        week = weeks.getWeek(weekValue);
+        Week week = weeks.getWeek(weekValue);
         PrintHandler.printWeek(week);
         input.pressEnterContinue();
         new UserMenu();
