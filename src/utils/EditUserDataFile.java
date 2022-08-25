@@ -3,7 +3,7 @@ package utils;
 import java.io.*;
 import java.util.Scanner;
 
-public class EditRecordFiles {
+public class EditUserDataFile {
     public static void edit(String filepath, String oldStepsStr, String newStepsStr) {
 
         String tempFile = "temp.txt";

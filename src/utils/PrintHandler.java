@@ -17,6 +17,10 @@ public class PrintHandler {
         System.out.println("[0] Switch to Dietician");
     }
 
+    public static void goBack() {
+        System.out.println("[0] Go Back");
+    }
+
     public static void previousMenu() {
         System.out.print("Enter 0 to go back to previous menu: ");
     }
@@ -54,7 +58,6 @@ public class PrintHandler {
 
         List<String> ingredients = recipe.getIngredients();
         List<String> steps = recipe.getSteps();
-        String Name = recipe.getName();
 
         System.out.println(recipe.getName());
         System.out.println("Ingredients: ");

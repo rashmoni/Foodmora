@@ -9,20 +9,17 @@ public class ListWeekView {
         PrintHandler.clearScreen();
         PrintHandler.appTitle();
         System.out.println("List of all weeks:");
-        PrintHandler.pintList(menuOptions);
-        optionSelectMsg();
+        PrintHandler.printOptionList(menuOptions);
+        PrintHandler.goBack();
+        printUserPrompt();
     }
 
     public void printInvalidOption() {
         System.out.println("⚠️ Invalid option");
     }
 
-    public void printRequest() {
-        System.out.print("Choose a song and press enter: ");
-    }
-
-    public void optionSelectMsg() {
-        System.out.print("Enter 1 to view current week and 0 to go back: ");
+    public void printUserPrompt() {
+        System.out.print("Choose an week and press enter: ");
     }
 
 }

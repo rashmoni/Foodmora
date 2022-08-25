@@ -20,11 +20,10 @@ public class UserMenuModel {
         User user = new User();
         switch (selectedOption) {
             case 0 -> new DieticianMenu();
-            case 1 -> new ListWeeks();
-            case 2 -> new ListRecipes("User");
+            case 1 -> user.listWeeks();
+            case 2 -> user.listRecipe("user");
             case 3 -> user.viewRecipe("user");
-            //case 3 -> new ViewRecipe("User");
-            case 4 -> new GenerateWeek();
+            case 4 -> user.generateWeek();
             default -> throw new IndexOutOfBoundsException();
         }
     }

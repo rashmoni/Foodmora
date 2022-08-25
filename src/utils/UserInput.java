@@ -46,7 +46,6 @@ public class UserInput {
     public void pressEnterContinue(){
         System.out.print("Press Enter to continue...");
         String abc  = in.nextLine();
-
     }
 
     public String slectIngType(String promptMsg){

@@ -21,7 +21,7 @@ public class Steps {
             String Step = "";
             int anotherInput;
 
-            Step = Step + input.readText("Please Enter steps: ");
+            Step = Step + input.readText("Please Enter a step: ");
             System.out.println("[1] Enter More Steps: ");
             System.out.println("[0] Save: ");
 

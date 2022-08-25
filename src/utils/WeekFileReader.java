@@ -29,7 +29,7 @@ public class WeekFileReader {
             Week week = new Week(singleWeekDataList, weekNumber);
             weeks.add(week);
         }
-
+        scanner.close();
         return weeks;
     }
 }

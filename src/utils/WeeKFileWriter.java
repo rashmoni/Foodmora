@@ -19,6 +19,6 @@ public class WeeKFileWriter {
         PrintWriter dataOut = new PrintWriter(dataWriter);
         dataOut.print("\n"+dataString);
         dataOut.close();
-
+        dataWriter.close();
     }
 }

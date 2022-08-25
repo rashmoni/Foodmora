@@ -3,6 +3,7 @@ package Data;
 import utils.WeekFileReader;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AllWeeks {
@@ -10,12 +11,17 @@ public class AllWeeks {
     private static List<Week> weeks;
 
     public AllWeeks() throws FileNotFoundException {
-        this.weeks=WeekFileReader.getWeeks();
+        WeekFileReader reader = new WeekFileReader();
+        this.weeks = reader.getWeeks();
         this.totalWeekCount= weeks.size();
     }
 
     public List<Week> getAllWeeks(){
         return weeks;
+    }
+
+    public Week getWeek(int weekIndex){
+        return weeks.get(weekIndex);
     }
 
     public int getTotalWeekCount(){
@@ -24,7 +30,17 @@ public class AllWeeks {
 
     public int getLastWeekNumber(){
         int lastWeekNumber = (weeks.get(weeks.size()-1).getWeekNumber());
-        return lastWeekNumber;
+        if (lastWeekNumber<52) return lastWeekNumber;
+        else return 0;
+    }
+
+    public List<String> getAllWeekNames() {
+        List<String> allWeekValues = new ArrayList<>();
+        for (int index = 0; index < weeks.size(); index++) {
+            String weekVal = "Week " + weeks.get(index).getWeek().get(0);
+            allWeekValues.add(weekVal);
+        }
+        return allWeekValues;
     }
 
 }

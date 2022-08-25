@@ -1,5 +1,6 @@
 package ListWeeks;
 
+
 import java.io.FileNotFoundException;
 
 public class ListWeeks {
@@ -9,6 +10,5 @@ public class ListWeeks {
         ListWeekController controller = new ListWeekController(model, view);
 
         controller.requestUserInput();
-
     }
 }

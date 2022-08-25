@@ -2,7 +2,7 @@ package EditRecipe;
 
 import Data.Recipe;
 import Data.RecipePool;
-import utils.EditRecordFiles;
+import utils.EditUserDataFile;
 import utils.PrintHandler;
 import utils.UserInput;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class EditSteps {
         newSteps.add(newStep);
         String oldStepsStr = String.join(",",oldSteps);
         String newStepsStr = String.join(",",newSteps);
-        EditRecordFiles.edit("assets/steps.txt", oldStepsStr, newStepsStr);
+        EditUserDataFile.edit("assets/steps.txt", oldStepsStr, newStepsStr);
 
     }
 
@@ -41,7 +41,7 @@ public class EditSteps {
         newSteps.remove(selectedStep+1);
         String oldStepsStr = String.join(",",oldSteps);
         String newStepsStr = String.join(",",newSteps);
-        EditRecordFiles.edit("assets/steps.txt", oldStepsStr, newStepsStr);
+        EditUserDataFile.edit("assets/steps.txt", oldStepsStr, newStepsStr);
 
     }
 }

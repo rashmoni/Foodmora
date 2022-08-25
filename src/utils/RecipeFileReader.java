@@ -1,7 +1,6 @@
 package utils;
 
 import Data.Recipe;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -10,30 +9,30 @@ import java.util.Scanner;
 
 
 public class RecipeFileReader {
-    private static Scanner scanner1;
-    private static Scanner scanner2;
+    private static Scanner scannerIng;
+    private static Scanner scannerStep;
     private static List<Recipe> recipes;
 
     public RecipeFileReader() throws FileNotFoundException {
         File ingFile = new File("assets/ingredients.txt");
         File stepsFile = new File("assets/steps.txt");
-        scanner1 = new Scanner(ingFile);
-        scanner2 = new Scanner(stepsFile);
+        scannerIng = new Scanner(ingFile);
+        scannerStep = new Scanner(stepsFile);
         recipes = generateRecipes();
     }
     public static List<Recipe> getRecipes() {
         return recipes;
     }
-    public List<Recipe> generateRecipes() throws FileNotFoundException {
+    public List<Recipe> generateRecipes()  {
         List<Recipe> recipes = new ArrayList<>();
-        while (scanner1.hasNextLine()) {
-            String rawData1 = scanner1.nextLine();
-            String rawData2 = scanner2.nextLine();
-            List<String> ingData = List.of(rawData1.split(","));
-            List<String> stepsData = List.of(rawData2.split(","));
-            int ID = Integer.parseInt(ingData.get(0));
-            String name = ingData.get(1);
-            Recipe newRecipe = new Recipe(ID, name,ingData,stepsData);
+        while (scannerIng.hasNextLine()) {
+            String ingredient = scannerIng.nextLine();
+            String step = scannerStep.nextLine();
+            List<String> ingList = List.of(ingredient.split(","));
+            List<String> stepsList = List.of(step.split(","));
+            int ID = Integer.parseInt(ingList.get(0));
+            String name = ingList.get(1);
+            Recipe newRecipe = new Recipe(ID, name,ingList,stepsList);
 
             recipes.add(newRecipe);
         }

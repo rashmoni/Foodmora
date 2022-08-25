@@ -3,4 +3,4 @@
 37,salad,veg soup,paneer salad,chicken salad,pancakes,peas soup,oat meal
 38,oat meal,paneer salad,pancakes,chicken salad,peas soup,veg salad,veg soup
 39,Baked chicken,Omlette,salad,chicken salad,veg soup,peas soup,pancakes
-40,salad,peas soup,pancakes,Omlette,Baked chicken,chicken salad,chickenSandwich
+40,pancakes,Omlette,chicken salad,peas soup,veg soup,salad,Baked chicken

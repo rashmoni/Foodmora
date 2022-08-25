@@ -3,6 +3,6 @@
 3,veg soup,vegetables kg 0.2,water l 0.1,salt kg 0.001
 4,salad,cucumber pc 1,onion pc 1,tomato pc 1,salt kg 0.02,pepper kg 0.001
 5,Baked chicken,chicken kg 0.5,oliv oil l 0.01,salt kg 0.001,capsicum kg 0.1
-6,Omlette,eggs pc 5,salt kg 0.002,tomato pc 1
+6,Omlette,eggs pc 5,salt kg 0.002,tomato pc 1,onion pc 1
 7,chicken salad,chicken kg 0.2,capsicum kg 0.02,salt kg 0.001,oliv oil l 0.001
-8,chickenSandwich,chicken kg 0.3,bread pc 4,pepper kg 0.001,salt kg 0.001
+8,chickenSandwich,chicken kg 0.3,bread pc 4,pepper kg 0.001,salt kg 0.001,mayonaise kg 0.005

@@ -1,24 +1,21 @@
 package EditRecipe;
 
-import CreateRecipe.CreateRecipeHandler;
+
 import CreateRecipe.Ingredients;
 import Data.Recipe;
 import Data.RecipePool;
-import utils.EditRecordFiles;
+import utils.EditUserDataFile;
 import utils.PrintHandler;
 import utils.UserInput;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EditIngredients {
     static UserInput input = new UserInput();
-    public static void add(int userSelection, RecipePool pool) throws FileNotFoundException {
+    public static void add(int userSelection, RecipePool pool)  {
         Recipe oldRecipe = pool.getRecipeByID(userSelection-1);
         List<String> oldIngredient = oldRecipe.getIngredients();
         List<String> newIngredient = new ArrayList<>();
-        CreateRecipeHandler handler = new CreateRecipeHandler();
-        //List<String> ingredient = handler.inputIngredients();
         List<String> ingredient = Ingredients.inputIngredient();
         String IngStr = String.join(",",ingredient);
 
@@ -26,7 +23,7 @@ public class EditIngredients {
         newIngredient.add(IngStr);
         String newIngStr = String.join(",",newIngredient);
         String oldIngStr = String.join(",",oldIngredient);
-        EditRecordFiles.edit("assets/ingredients.txt", oldIngStr, newIngStr);
+        EditUserDataFile.edit("assets/ingredients.txt", oldIngStr, newIngStr);
 
     }
 
@@ -47,7 +44,7 @@ public class EditIngredients {
         String oldIngredientStr = String.join(",",oldIngredient);
         String newIngredientStr = String.join(",",newIngredient);
 
-        EditRecordFiles.edit("assets/ingredients.txt",oldIngredientStr , newIngredientStr);
+        EditUserDataFile.edit("assets/ingredients.txt",oldIngredientStr , newIngredientStr);
 
     }
 }

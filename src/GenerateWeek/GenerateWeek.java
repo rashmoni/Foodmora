@@ -5,16 +5,18 @@ import java.util.*;
 import Data.AllWeeks;
 import Data.RecipePool;
 import Data.Week;
-import UserMenu.*;
+import Default.User;
+import UserMenu.UserMenu;
 import utils.*;
 
 public class GenerateWeek {
     RecipePool pool = new RecipePool();
     AllWeeks weeks = new AllWeeks();
     UserInput input = new UserInput();
+
      public GenerateWeek() throws IOException {
-         input.pressEnterContinue();
          GenerateNewWeek();
+         new UserMenu();
     }
 
     public void GenerateNewWeek() throws IOException {
@@ -26,7 +28,6 @@ public class GenerateWeek {
         WeekValue.add(WeekNumber);
         WeekValue.addAll(randomList);
         Week week1 = new Week(WeekValue, weeks.getLastWeekNumber()+1);
-        System.out.println(week1);
         WeeKFileWriter.writeToFile(week1);
         System.out.print("New week "+WeekNumber+" is created ");
         input.pressEnterContinue();

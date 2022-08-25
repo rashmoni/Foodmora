@@ -1,25 +1,21 @@
 package Default;
 
-import Default.Person;
-import ViewRecipe.ViewRecipe;
+import ListWeeks.*;
+import GenerateWeek.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class User extends Person implements IUser {
 
     @Override
-    public void listWeeks() {
-
+    public void listWeeks() throws FileNotFoundException {
+       new ListWeeks();
     }
 
     @Override
-    public void generateWeek() {
-
+    public void generateWeek() throws IOException {
+       new GenerateWeek();
     }
 
-
-    @Override
-    public void ListRecipe() {
-
-    }
 }

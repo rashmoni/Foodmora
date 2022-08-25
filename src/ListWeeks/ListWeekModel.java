@@ -1,8 +1,10 @@
 package ListWeeks;
 
+import Data.AllWeeks;
 import UserMenu.UserMenu;
 import utils.PrintHandler;
 import Data.Week;
+import utils.UserInput;
 import utils.WeekFileReader;
 
 import java.io.FileNotFoundException;
@@ -11,49 +13,36 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ListWeekModel {
-    private final List<String> userMenuOptions;
-    private static List<Week> weeks;
-
+    UserInput input = new UserInput();
+    private List<String> userMenuOptions;
+    private AllWeeks weeks ;
     private Week week;
 
-
     public ListWeekModel() throws FileNotFoundException {
-        new WeekFileReader();
-        this.weeks = WeekFileReader.getWeeks();
-        this.userMenuOptions = allWeeks(weeks);
+        this.weeks = new AllWeeks();
+        userMenuOptions = weeks.getAllWeekNames();
     }
 
     public List<String> getMenuOptions() {
         return userMenuOptions;
     }
 
-    public Week getWeek() {
-        return week;
-    }
-
-    private List<String> allWeeks(List<Week> weeks) {
-        List<String> allWeekValue = new ArrayList<>();
-        for (int index = 0; index < weeks.size(); index++) {
-            String weekVal = "Week " + weeks.get(index).getWeek().get(0);
-            allWeekValue.add(weekVal);
-        }
-        return allWeekValue;
-    }
-
     public void handleOption(int selectedOption) throws IndexOutOfBoundsException, FileNotFoundException {
-        switch (selectedOption) {
-            case 0 -> new UserMenu();
-            case 1 -> handleWeek(selectedOption-1);
-            default -> throw new IndexOutOfBoundsException();
+        int size = weeks.getTotalWeekCount();
+
+        if(selectedOption==0){
+            new UserMenu();
         }
+        else if (selectedOption<=size) {
+            handleWeek(selectedOption-1);
+        }
+        else throw new IndexOutOfBoundsException();
     }
 
     private void handleWeek(int weekValue) throws FileNotFoundException {
-        week = weeks.get(weekValue);
+        week = weeks.getWeek(weekValue);
         PrintHandler.printWeek(week);
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Press Enter to continue ....");
-        scanner.nextLine();
+        input.pressEnterContinue();
         new UserMenu();
     }
 }
