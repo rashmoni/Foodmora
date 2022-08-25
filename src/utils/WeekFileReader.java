@@ -13,7 +13,7 @@ public class WeekFileReader {
     private static List<Week> weeks;
 
     public WeekFileReader() throws FileNotFoundException {
-        File userDataFile = new File("assets/userdata.txt");
+        File userDataFile = new File(FilePathReader.userWeekPath);
         scanner = new Scanner(userDataFile);
         weeks = generateWeeks();
     }

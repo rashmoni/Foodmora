@@ -7,10 +7,10 @@ import utils.UserInput;
 import java.io.*;
 import java.util.List;
 
-public class EditRecipeHandler {
+public class EditRecipe {
 
     UserInput input = new UserInput();
-    public EditRecipeHandler() throws FileNotFoundException {
+    public EditRecipe() throws FileNotFoundException {
         RecipePool pool = new RecipePool();
         List<String> allRecNames = pool.getAllRecipeNames();
         int allRecipeCount = allRecNames.size();
@@ -30,7 +30,7 @@ public class EditRecipeHandler {
             case 3: EditIngredients.add(userSelection, pool);break;
             case 4: EditIngredients.delete(userSelection,pool);break;
         }
-        input.pressEnterContinue();
+        input.oprationSaveSuccess();
         new DieticianMenu();
 
     }

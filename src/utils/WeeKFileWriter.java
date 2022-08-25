@@ -10,7 +10,7 @@ import java.util.List;
 public class WeeKFileWriter {
 
     public static void writeToFile(Week newWeek) throws IOException {
-        File userData = new File("assets/userdata.txt");
+        File userData = new File(FilePathReader.userWeekPath);
         List<String> data = newWeek.getWeek();
         String delim = ",";
         String dataString = String.join(delim,data);

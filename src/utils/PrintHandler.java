@@ -10,9 +10,11 @@ public class PrintHandler {
     public static void appTitle() {
         System.out.println("=== Recipe Manager ==="+"\n");
     }
+
     public static void switchToUser() {
         System.out.println("[0] Switch to User");
     }
+
     public static void switchToDietician() {
         System.out.println("[0] Switch to Dietician");
     }
@@ -34,7 +36,6 @@ public class PrintHandler {
             clearScreenUnix();
         }
     }
-
 
     public static void printOptionList(List<String> options) {
         for (int index = 0; index < options.size(); index++) {

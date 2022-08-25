@@ -14,8 +14,8 @@ public class RecipeFileReader {
     private static List<Recipe> recipes;
 
     public RecipeFileReader() throws FileNotFoundException {
-        File ingFile = new File("assets/ingredients.txt");
-        File stepsFile = new File("assets/steps.txt");
+        File ingFile = new File(FilePathReader.IngPath);
+        File stepsFile = new File(FilePathReader.stepPath);
         scannerIng = new Scanner(ingFile);
         scannerStep = new Scanner(stepsFile);
         recipes = generateRecipes();

@@ -35,8 +35,8 @@ public class UserInput {
         System.out.print(promptMsg);
         strInput = in.nextLine();
 
-        while ((strInput.equals(""))) {
-            System.out.print("\u26A0 Invalid Entry, Please enter valid search value :");
+        while ((strInput.equals("") || (strInput.equals(" ")))) {
+            System.out.print("\u26A0 Invalid Entry, Please enter valid recipe name: ");
             strInput = in.nextLine();
             strInput.trim();
         }
@@ -45,7 +45,12 @@ public class UserInput {
 
     public void pressEnterContinue(){
         System.out.print("Press Enter to continue...");
-        String abc  = in.nextLine();
+        in.nextLine();
+    }
+
+    public void oprationSaveSuccess(){
+        System.out.print("Operation successfully completed, press enter to continue..");
+        in.nextLine();
     }
 
     public String slectIngType(String promptMsg){

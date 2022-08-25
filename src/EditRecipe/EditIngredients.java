@@ -5,6 +5,7 @@ import CreateRecipe.Ingredients;
 import Data.Recipe;
 import Data.RecipePool;
 import utils.EditUserDataFile;
+import utils.FilePathReader;
 import utils.PrintHandler;
 import utils.UserInput;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.List;
 
 public class EditIngredients {
     static UserInput input = new UserInput();
+    private static String ingFilePath = FilePathReader.IngPath;
     public static void add(int userSelection, RecipePool pool)  {
         Recipe oldRecipe = pool.getRecipeByID(userSelection-1);
         List<String> oldIngredient = oldRecipe.getIngredients();
@@ -23,7 +25,7 @@ public class EditIngredients {
         newIngredient.add(IngStr);
         String newIngStr = String.join(",",newIngredient);
         String oldIngStr = String.join(",",oldIngredient);
-        EditUserDataFile.edit("assets/ingredients.txt", oldIngStr, newIngStr);
+        EditUserDataFile.edit(ingFilePath, oldIngStr, newIngStr);
 
     }
 
@@ -44,7 +46,7 @@ public class EditIngredients {
         String oldIngredientStr = String.join(",",oldIngredient);
         String newIngredientStr = String.join(",",newIngredient);
 
-        EditUserDataFile.edit("assets/ingredients.txt",oldIngredientStr , newIngredientStr);
+        EditUserDataFile.edit(ingFilePath,oldIngredientStr , newIngredientStr);
 
     }
 }

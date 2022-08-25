@@ -1,4 +1,4 @@
-1,peas soup,Boil water in a pan,Put peas and salt,Mix and stir well,do something
+1,peas soup,Mix and stir well,do something,do something more
 2,pancakes,Mix wheat butter and sugar,Put batter in frypan,remove and eat
 3,veg soup,Boil water,Put salt and veg on boil water,Grind veg and make a smooth paste,Heat a pan and put buter and veg paste, pour veg stock and pepper,remove and eat
 4,salad,Cut Cucumber,Add oil,salt and mix well,Ready to eat

@@ -27,7 +27,7 @@ public class CreateRecipe {
         Recipe recipe = new Recipe(totalRecipes+1, recipeName, ingredients, steps);
         RecipeFileWriter writer = new RecipeFileWriter();
         writer.writeToFile(recipe);
-        input.pressEnterContinue();
+        input.oprationSaveSuccess();
         new DieticianMenu();
     }
 }
