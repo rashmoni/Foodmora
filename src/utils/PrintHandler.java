@@ -47,7 +47,6 @@ public class PrintHandler {
         for (int index = 0; index < options.size(); index++) {
             int number = index + 1;
             String label = options.get(index);
-
             System.out.println( number+ ". " + label);
         }
     }
