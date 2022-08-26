@@ -4,7 +4,9 @@ Java Project 1
 ## Table of contents
 * [Introduction](#introduction)
 * [Technologies](#technologies)
+* [Documents](#documents)
 * [Run](#run)
+
 
 ## Introduction
 This project is terminal based app.
@@ -15,6 +17,12 @@ Dietician can create new recipes and add to the pool of recipes.
 ## Technologies
 Project is created with:
 * Java 17.0.2 Version
+
+## Documents
+Project Management Documents: 
+- [Usecase Diagram](https://github.com/rashmoni/Foodmora/blob/main/UseCaseDiagram.pdf)
+- [Class Diagram](https://github.com/rashmoni/Foodmora/blob/main/Foodmora_Class_Diagram.pdf)
+- [Usecases](https://github.com/rashmoni/Foodmora/blob/main/FoodMora_UsaCases.xlsx)
 
 ## Run
 To run this application do the following steps.
